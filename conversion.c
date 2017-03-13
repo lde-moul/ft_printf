@@ -6,7 +6,7 @@
 /*   By: lde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 16:15:09 by lde-moul          #+#    #+#             */
-/*   Updated: 2017/03/13 15:02:14 by lde-moul         ###   ########.fr       */
+/*   Updated: 2017/03/13 17:49:42 by lde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,20 +52,20 @@ static void	check_format(char c, char *format)
 		*format = CONV_NONE;
 }
 
-static void	init(const char *fmt, size_t *i, t_format *info)
+static void	init(const char *fmt, size_t *i, t_format *info, char *c)
 {
 	info->conversion_type = CONV_NONE;
 	info->written = 0;
 	check_length(fmt, i, &info->conversion_length);
+	*c = fmt[*i];
+	check_format(*c, &info->conversion_format);
 }
 
 void		check_conversion(const char *fmt, size_t *i, t_format *info)
 {
 	char c;
 
-	init(fmt, i, info);
-	c = fmt[*i];
-	check_format(c, &info->conversion_format);
+	init(fmt, i, info, &c);
 	if (c == 'u' || c == 'U' || c == 'x' || c == 'X' || c == 'o' || c == 'O')
 		info->conversion_type = CONV_UNSIGNED;
 	else if (c == 'd' || c == 'i' || c == 'D')
