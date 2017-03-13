@@ -6,7 +6,7 @@
 /*   By: lde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 17:07:51 by lde-moul          #+#    #+#             */
-/*   Updated: 2017/03/13 17:47:01 by lde-moul         ###   ########.fr       */
+/*   Updated: 2017/03/13 18:06:14 by lde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-void	check_prec(const char *fmt, va_list args, size_t *i, int *prec)
+void	check_precision(const char *fmt, va_list args, size_t *i, int *prec)
 {
 	if (fmt[*i] != '.')
 	{

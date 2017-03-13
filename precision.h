@@ -6,7 +6,7 @@
 /*   By: lde-moul <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 16:18:08 by lde-moul          #+#    #+#             */
-/*   Updated: 2017/03/13 15:11:05 by lde-moul         ###   ########.fr       */
+/*   Updated: 2017/03/13 18:03:51 by lde-moul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 # include <stdarg.h>
 # include <stdlib.h>
 
-void	check_precision(const char *fmt, va_list args, size_t *i, int *width);
+void	check_precision(const char *fmt, va_list args, size_t *i, int *prec);
 
 #endif
